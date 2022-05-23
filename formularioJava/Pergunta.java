@@ -1,15 +1,17 @@
 package aps.src.padroesDeProjeto.formularioJava;
 
-public class Pergunta implements ItemForm{
+public class Pergunta implements ItemForm {
 
     private String titulo;
     private String subtitulo;
     private String descricao;
+    private String resposta;
 
-    public Pergunta (String titulo, String subtitulo, String descricao){
+    public Pergunta (String titulo, String subtitulo, String descricao, String resposta){
         this.titulo = titulo;
         this.subtitulo = subtitulo;
         this.descricao = descricao;
+        this.resposta = resposta;
     }
 
     @Override
@@ -70,6 +72,10 @@ public class Pergunta implements ItemForm{
     @Override
     public String searchDescricao(String descricao) {
         return this.descricao;
+    }
+
+    public void validadorResposta (ValidadorResposta validadorResposta){
+        validadorResposta.validarResposta(this.resposta);
     }
 
 }
